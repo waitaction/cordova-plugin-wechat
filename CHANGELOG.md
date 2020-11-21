@@ -2,7 +2,7 @@
 
 ## 3.0.0 - 2020-02-20
 ### Added
-- IOS Opensdk 1.8.6.2
+- IOS Opensdk 1.8.7.1
 - Support *Universal Links*
 ### Fixed
 - Remove IOS Deprecated Method

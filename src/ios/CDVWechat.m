@@ -158,28 +158,6 @@ static int const MAX_THUMBNAIL_SIZE = 320;
         }
     }
 
-    PayReq *req = [[PayReq alloc] init];
-
-    // NSString *appId = [params objectForKey:requiredParams[5]];
-    // if (appId && ![appId isEqualToString:self.wechatAppId]) {
-    //     self.wechatAppId = appId;
-    //     [WXApi registerApp: appId];
-    // }
-
-    req.partnerId = [params objectForKey:requiredParams[0]];
-    req.prepayId = [params objectForKey:requiredParams[1]];
-    req.timeStamp = [[params objectForKey:requiredParams[2]] intValue];
-    req.nonceStr = [params objectForKey:requiredParams[3]];
-    req.package = @"Sign=WXPay";
-    req.sign = [params objectForKey:requiredParams[4]];
-    
-    [WXApi sendReq:(BaseReq *)req completion:^(BOOL success) {
-       if (success) {
-           self.currentCallbackId = command.callbackId;
-       } else {
-           [self failWithCallbackID:command.callbackId withMessage:@"发送请求失败"];
-       }
-    }];
 }
 
 - (void)chooseInvoiceFromWX:(CDVInvokedUrlCommand *)command

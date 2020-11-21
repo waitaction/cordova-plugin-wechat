@@ -3,7 +3,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:rim="http://www.blackberry.com/ns/widgets"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="cordova-plugin-wechat"
+    id="cordova-plugin-wechat2"
     version="3.0.0">
 
     <name>Wechat</name>
@@ -70,10 +70,10 @@
         <source-file src="src/ios/AppDelegate+Wechat.m" />
 
         <!-- Wechat Official -->
-        <header-file src="src/ios/libs/OpenSDK1.8.6.2/WXApi.h" />
-        <header-file src="src/ios/libs/OpenSDK1.8.6.2/WXApiObject.h" />
-        <header-file src="src/ios/libs/OpenSDK1.8.6.2/WechatAuthSDK.h" />
-        <source-file src="src/ios/libs/OpenSDK1.8.6.2/libWeChatSDK.a" framework="true" />
+        <header-file src="src/ios/libs/OpenSDK1.8.7.1/WXApi.h" />
+        <header-file src="src/ios/libs/OpenSDK1.8.7.1/WXApiObject.h" />
+        <header-file src="src/ios/libs/OpenSDK1.8.7.1/WechatAuthSDK.h" />
+        <source-file src="src/ios/libs/OpenSDK1.8.7.1/libWeChatSDK.a" framework="true" />
 
         <!-- Other required frameworks -->
         <framework src="libz.tbd" />
