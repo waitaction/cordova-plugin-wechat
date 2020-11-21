@@ -1,6 +1,3 @@
-![Active](https://www.repostatus.org/badges/latest/active.svg)
-![Downloads](https://img.shields.io/npm/dt/cordova-plugin-wechat.svg)
-![version](https://img.shields.io/npm/v/cordova-plugin-wechat/latest.svg)
 
 # 重要说明
 
@@ -16,17 +13,13 @@
 
 # 功能
 
-微信登录，微信app支付，微信分享，微信投票
+微信登录，微信分享，微信投票
 
-# demo
 
-[ionic3 demo](https://github.com/jasonz1987/ionic3-wechat-sdk-demo)
-
-[ionic1/2 demo](https://github.com/xu-li/cordova-plugin-wechat-example)
 
 # 安装
 
-1. ```cordova plugin add cordova-plugin-wechat2  --variable wechatappid=YOUR_WECHAT_APPID```, or using [plugman](https://npmjs.org/package/plugman), [phonegap](https://npmjs.org/package/phonegap), [ionic](http://ionicframework.com/)
+1. ```cordova plugin add cordova-plugin-wechat-share  --variable wechatappid=YOUR_WECHAT_APPID```, or using [plugman](https://npmjs.org/package/plugman), [phonegap](https://npmjs.org/package/phonegap), [ionic](http://ionicframework.com/)
 
 2. ```cordova build ios``` or ```cordova build android```
 
@@ -128,75 +121,4 @@ Wechat.share({
 });
 ```
 
-## 发送支付请求
-```Javascript
-// See https://github.com/xu-li/cordova-plugin-wechat-example/blob/master/server/payment_demo.php for php demo
-var params = {
-    partnerid: '10000100', // merchant id
-    prepayid: 'wx201411101639507cbf6ffd8b0779950874', // prepay id
-    noncestr: '1add1a30ac87aa2db72f57a2375d8fec', // nonce
-    timestamp: '1439531364', // timestamp
-    sign: '0CB01533B8C1EF103065174F50BCA001', // signed string
-};
-
-Wechat.sendPaymentRequest(params, function () {
-    alert("Success");
-}, function (reason) {
-    alert("Failed: " + reason);
-});
-```
-
-## Choose invoices from card list
-```Javascript
-//offical doc https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1496561749_f7T6D
-var params = {
-    timeStamp: '1510198391', // timeStamp
-    signType: 'SHA1', // sign type
-    cardSign: 'dff450eeeed08120159d285e79737173aec3df94', // cardSign
-    nonceStr: '5598190f-5fb3-4bff-8314-fd189ab4e4b8', // nonce
-};
-
-Wechat.chooseInvoiceFromWX(data,function(data){
-    console.log(data);
-},function(){
-    alert('error');
-})
-```
-
-## 打开微信微信小程序
-```Javascript
-//offical doc https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=21526646437Y6nEC&token=&lang=zh_CN
-var params = {
-    userName: 'gh_d43f693ca31f', // 小程序userName
-    path: 'pages/index/index?name1=key1&name2=key2', // 打开小程序路径
-    miniprogramType: Wechat.Mini.RELEASE //正式版:0，测试版:1，体验版:2
-};
-
-Wechat.openMiniProgram(params,function(data){
-    console.log(data); // data:{extMsg:""}  extMsg: 对应小程序组件 <button open-type="launchApp"> 中的 app-parameter 属性
-},function(){
-    alert('error');
-})
-```
-
-# FAQ
-
-See [FAQ](https://github.com/xu-li/cordova-plugin-wechat/wiki/FAQ).
-
-QQ群：190808518  [![cordova-wechat官方交流群](https://pub.idqqimg.com/wpa/images/group.png)](http://shang.qq.com/wpa/qunwpa?idkey=8279476de172cacb72a51a5630744316c0069620ad8b33be3abee243af2cc001)
-
-
-# TODO
-
-1. 增加参数检查
-
-# 捐赠
-
-开源软件的发展离不开大家的推动和支持，如果我们的插件帮助到了你，欢迎捐赠（注：微信插件）。
-
-![donate.png](donate.png)
-
-
-# LICENSE
-
-[MIT LICENSE](http://opensource.org/licenses/MIT)
+ 
